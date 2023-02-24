@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "stats": "node stats.js"
+  }
+}

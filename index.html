@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="A Todo App" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>npm versions</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    </head>
+    <body>
+        <canvas id="myChart" style="width: 100%; max-width: 700px"></canvas>
+        <script>
+            const build = (data, title) => {
+                const xValues = data.map((entry) => entry.version);
+                const yValues = data.map((entry) => entry.downloads);
+                const backgroundColor = [
+                    "rgba(255, 99, 132, 0.2)",
+                    "rgba(255, 159, 64, 0.2)",
+                    "rgba(255, 205, 86, 0.2)",
+                    "rgba(75, 192, 192, 0.2)",
+                    "rgba(54, 162, 235, 0.2)",
+                    "rgba(153, 102, 255, 0.2)",
+                    "rgba(201, 203, 207, 0.2)",
+                ];
+
+                const borderColor = [
+                    "rgb(255, 99, 132)",
+                    "rgb(255, 159, 64)",
+                    "rgb(255, 205, 86)",
+                    "rgb(75, 192, 192)",
+                    "rgb(54, 162, 235)",
+                    "rgb(153, 102, 255)",
+                    "rgb(201, 203, 207)",
+                ];
+
+                new Chart("myChart", {
+                    type: "bar",
+                    data: {
+                        labels: xValues,
+                        datasets: [
+                            {
+                                backgroundColor,
+                                borderColor,
+                                borderWidth: 1,
+                                data: yValues,
+                            },
+                        ],
+                    },
+                    options: {
+                        legend: { display: false },
+                        title: {
+                            display: true,
+                            text: title,
+                        },
+                    },
+                });
+            };
+        </script>
+        <script>
+            const data = [{"version":"17.0.2","downloads":5868147},{"version":"18.2.0","downloads":5668920},{"version":"16.14.0","downloads":3559448},{"version":"16.13.1","downloads":1850631},{"version":"18.1.0","downloads":578750},{"version":"17.0.1","downloads":403359}];
+            const title = "react versions - last 7 days (2/24/2023)"
+            build(data, title);
+        </script>
+    </body>
+</html>
