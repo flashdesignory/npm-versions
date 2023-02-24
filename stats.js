@@ -1,11 +1,3 @@
-/**
- * Instructions
- * go to: https://www.npmjs.com/package/react?activeTab=versions
- * open console and copy window.__context__ object
- * save to json file
- * replace require import to point to new file
- */
-
 const fs = require("fs").promises;
 
 const parse = async (file) => {
