@@ -1,5 +1,8 @@
 # NPM Versions
 
+Simple way to get a quick reference of the top 6 downloads by version of the last 7 days.
+Taken from the versions tab of an npm package.
+
 ![Screenshot](./screenshot.png)
 
 ## Instructions
